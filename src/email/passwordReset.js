@@ -8,7 +8,7 @@ export const sendResetEmail = async (options) => {
     service: "gmail",
     auth: {
       user: "amardroied@gmail.com",
-      pass: "ksojvqybnzblkpea",
+      pass: process.env.EMAIL_KEY,
     },
   });
   const token = generateToken({ email: options.email, })
