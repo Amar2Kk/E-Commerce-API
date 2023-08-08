@@ -51,8 +51,8 @@ export const createUserSchema = joi.object({
       'number.max': 'Age must be less than or equal to 120.'
     }),
   role: joi.string()
-  .valid('user', 'seller', 'admin')
-  .default('user')
+    .valid('user', 'seller', 'admin')
+    .default('user')
 })
 
 export const updateUserSchema = joi.object({

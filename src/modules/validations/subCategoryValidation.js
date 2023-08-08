@@ -39,7 +39,7 @@ export const updateSubCategorySchema = joi.object({
       'any.required': 'Name is required.',
     }),
   category: joi.string().hex().length(24).trim().required()
-  
+
 })
 
 

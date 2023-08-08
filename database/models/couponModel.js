@@ -21,6 +21,6 @@ const couponSchema = new Schema({
     type: Date,
     required: [true, 'Valid until date is required.']
   }
-}, {timestamps: true});
+}, { timestamps: true });
 
 export const couponModel = mongoose.model('Coupon', couponSchema);
