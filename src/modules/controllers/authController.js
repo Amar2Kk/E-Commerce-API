@@ -67,14 +67,14 @@ const resetUserPassword = catchErrors(async (req, res, next) => {
   const { token } = req.query;
   if (!token) return next(new AppError('Token not found', 400))
   const newPassword = req.body.password
-    jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
-      if (err) return next(new AppError(`Token error:${err.message}`, 500))
-      await userModel.findOneAndUpdate({ email: decoded.email }, { password: newPassword, passwordChangeDate: Date.now() });
-        res.status(200).json({
-          status: 'success',
-          message: 'You Have updated your password successfully!'
-        });
-      });
+  jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
+    if (err) return next(new AppError(`Token error:${err.message}`, 500))
+    await userModel.findOneAndUpdate({ email: decoded.email }, { password: newPassword, passwordChangeDate: Date.now() });
+    res.status(200).json({
+      status: 'success',
+      message: 'You Have updated your password successfully!'
+    });
+  });
 });
 
 const logIn = catchErrors(async (req, res, next) => {
