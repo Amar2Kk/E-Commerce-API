@@ -61,6 +61,11 @@ const userSchema = mongoose.Schema({
   wishlist: [{
     type: mongoose.Types.ObjectId,
     ref: 'Product'
+  }],
+  addresses: [{
+    street: String,
+    city: String,
+    phoneNumber: String,
   }]
 }, {
   timestamps: true

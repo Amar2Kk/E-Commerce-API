@@ -4,9 +4,10 @@ export const SchemaValidation = (schema) => {
     const inputs = { ...req.body, ...req.params, ...req.query }
     const { error } = schema.validate(inputs, { abortEarly: false });
     if (!error) {
-      next()
+      next();
     } else {
-      res.status(406).send('Error/' + error);
+      const validationErrors = error.details.map(detail => detail.message);
+      res.status(406).json({ status: 'fail', errors: validationErrors });
     }
   }
 }

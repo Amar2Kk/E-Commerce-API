@@ -1,4 +1,5 @@
 import { AppError } from "../utils/errors/AppError.js"
+import { addressRouter } from "./routes/addressRoutes.js"
 import { authRouter } from "./routes/authRoutes.js"
 import { brandRouter } from "./routes/brandRoutes.js"
 import { categoryRouter } from "./routes/categoryRoutes.js"
@@ -17,6 +18,7 @@ export function serverRoutes(app) {
   app.use('/api/v1/products', productRouter)
   app.use('/api/v1/reviews', reviewRouter)
   app.use('/api/v1/wishlists', wishlistRouter)
+  app.use('/api/v1/addresses', addressRouter)
 
 
   app.use('*', (req, res, next) => {

@@ -10,9 +10,10 @@ import { sendResetEmail } from "../../email/passwordReset.js";
 import { sendEmail } from "../../email/emailVerification.js";
 
 const signUp = catchErrors(async (req, res, next) => {
-  const User = await userModel.findOne(req.body.email);
+  const { email } = req.body;
+  const User = await userModel.findOne({ email });
   if (User) return next(new AppError('User already exists!', 406));
-  req.body.profilePic = req.file.filename
+  if (req.file) req.body.profilePic = req.file.filename
   let newUser = new userModel(req.body);
   await newUser.save();
   sendEmail({ email })

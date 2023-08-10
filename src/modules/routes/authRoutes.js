@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { logIn, logOut, resetUserPassword, sendPasswordResetEmail, signUp, uploadPfp, verifyEmail } from "../controllers/authController.js";
-import { SchemaValidation } from "../../middlewares/schemaValidation.js";
 import { LoginSchema, signUpSchema } from "../validations/authValidation.js";
 import { uploadSingleFile } from "../../middlewares/fileUpload.js";
+import { SchemaValidation } from "../../middlewares/schemaValidation.js";
 
 export const authRouter = new Router();
 

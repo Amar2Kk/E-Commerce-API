@@ -1,11 +1,12 @@
 import { Router } from "express";
 import { allowedUsers, userAuth } from "../../middlewares/userAuth.js";
-import { addWishlist } from "../controllers/wishlistController.js";
+import { addToWishlist, deleteFromWishlist, getUserWishlist } from "../controllers/wishlistController.js";
 
 export const wishlistRouter = new Router({ mergeParams: true });
 
 
 wishlistRouter
   .route('/')
-  .patch(userAuth, allowedUsers('user'), addWishlist)
-  .get(getAllReviews)
+  .get(userAuth, allowedUsers('user'), getUserWishlist)
+  .patch(userAuth, allowedUsers('user'), addToWishlist)
+  .delete(userAuth, allowedUsers('user'), deleteFromWishlist)

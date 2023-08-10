@@ -9,11 +9,13 @@ const app = express();
 const port = process.env.PORT
 
 connectToDB()
-serverRoutes(app)
 
 app.use(express.json())
 app.use(express.static('uploads'))
 app.use(morgan('dev'))
+
+serverRoutes(app)
+
 
 app.listen(port, () => {
   console.log(`Server Connection established ✅\n

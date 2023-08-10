@@ -20,7 +20,7 @@ export const signUpSchema = joi.object({
     .pattern(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)
     .messages({
       'string.base': 'Email must be a string.',
-      'string.empty': 'Email is required.',
+      'string.empty': 'Email field cannot be empty.',
       'any.required': 'Email is required.',
     }),
   password: joi.string()

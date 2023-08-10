@@ -1,8 +1,6 @@
 import { ApiFeatures } from "../utils/ApiFeatures.js";
 import { AppError } from "../utils/errors/AppError.js";
 import { catchErrors } from "../utils/errors/catchAsyncError.js";
-import slugify from 'slugify'
-
 
 // export const create = (model, identifier) => {
 //   return catchErrors(async (req, res, next) => {
