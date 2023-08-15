@@ -9,7 +9,7 @@ const addCategory = catchErrors(async (req, res, next) => {
   const category = await categoryModel.findOne({ name });
   if (category) return next(new AppError('Category already exists', 406));
   req.body.slug = slugify(req.body.name);
-  req.body.image = req.file.filename
+  if (req.file) req.body.image = req.file.filename
   let newCategory = new categoryModel(req.body);
   await newCategory.save();
   res.status(201).json({
