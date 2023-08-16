@@ -19,4 +19,4 @@ app.use(morgan('dev'))
 
 serverRoutes(app)
 
-module.exports = app
+export default app
