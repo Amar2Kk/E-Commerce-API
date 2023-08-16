@@ -20,6 +20,9 @@ export function serverRoutes(app) {
   app.use('/api/v1/wishlists', wishlistRouter)
   app.use('/api/v1/addresses', addressRouter)
 
+  app.get('/api/v1/', (req, res, next) => {
+    res.send('Welcome to the e-commerce API, \n Please refer back to the documentation page for the api endpoints.')
+  })
 
   app.use('*', (req, res, next) => {
     next(new AppError(`invalid path - cant access ${req.originalUrl} endpoint.`, 404));
