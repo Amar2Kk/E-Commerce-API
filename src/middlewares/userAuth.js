@@ -21,7 +21,7 @@ export const userAuth = catchErrors(async (req, res, next) => {
 export const allowedUsers = (...roles) => {
   return catchErrors(async (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      return next(new AppError('You are not authorized to do this action as a ', 401))
+      return next(new AppError('You are not authorized to do this action as a ' + req.user.role, 401))
     }
     next()
   })

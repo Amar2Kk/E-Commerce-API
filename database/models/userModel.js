@@ -60,7 +60,7 @@ const userSchema = mongoose.Schema({
   },
   wishlist: [{
     type: mongoose.Types.ObjectId,
-    ref: 'Product'
+    ref: 'product'
   }],
   addresses: [{
     street: String,
