@@ -1,21 +1,6 @@
-import express from 'express';
-import * as dotenv from 'dotenv'
-import morgan from 'morgan'
-import { connectToDB } from './database/connectToDB.js';
-import { serverRoutes } from './src/modules/index.routes.js';
+import app from './app.js'
 
-dotenv.config()
-const app = express();
-const port = process.env.PORT
-
-connectToDB()
-
-app.use(express.json())
-app.use(express.static('uploads'))
-app.use(morgan('dev'))
-
-serverRoutes(app)
-
+const port = process.env.PORT || 5000
 
 app.listen(port, () => {
   console.log(`Server Connection established ✅\n
