@@ -1,4 +1,4 @@
-import { subCategoryModel } from "../../../database/models/subcategoryModel.js";
+import { subCategoryModel } from "../../../database/models/subCategoryModel.js";
 import { deleteOne, getAll, getOne } from "../../handlers/factorHandler.js";
 import { AppError } from "../../utils/errors/AppError.js";
 import { catchErrors } from "../../utils/errors/catchAsyncError.js";
