@@ -21,7 +21,8 @@ export function serverRoutes(app) {
   app.use('/api/v1/addresses', addressRouter)
 
   app.get('/api/v1/', (req, res, next) => {
-    res.send('Welcome to the e-commerce API v1.0, \n Please refer back to the documentation page for the api endpoints.')
+    res.send(`Welcome to the e-commerce API v1.0\n 
+    Please refer back to the documentation page for the api endpoints.`)
   })
 
   app.get('/', (req, res,next) => {
