@@ -10,4 +10,4 @@ addressRouter
   .route('/')
   .get(userAuth, allowedUsers('user'), getUserAddresses)
   .patch(userAuth, allowedUsers('user'), SchemaValidation(createAddressSchema), addToAddresses)
-  .delete(userAuth, allowedUsers('user'), SchemaValidation(deleteSchema) deleteFromAddresses)
+  .delete(userAuth, allowedUsers('user'), SchemaValidation(deleteSchema), deleteFromAddresses)
