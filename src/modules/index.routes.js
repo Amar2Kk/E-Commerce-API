@@ -26,7 +26,7 @@ export function serverRoutes(app) {
   })
 
   app.get('/', (req, res,next) => {
-    res.send('Hey, Welcome to the e-commerce API 🥳')
+    res.send('Hello, Welcome to the e-commerce API 🥳')
   })
 
   app.use('*', (req, res, next) => {
